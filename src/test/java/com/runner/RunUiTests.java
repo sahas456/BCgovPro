@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin = {"html:target/cucumber-html-report"},
         glue = "com.steps",
         features = "src/test/resources/ui/",
-        tags = "@login"
+        tags = "@permit"
 )
 public class RunUiTests {
 

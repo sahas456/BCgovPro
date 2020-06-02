@@ -1,3 +1,4 @@
+
 # test123
 
 Clone the project:
@@ -36,8 +37,3 @@ Right click on it and click RunUITests option
 Reports would be generated under :
 /target/cucumber-html-report
 
-
-To run scripts on Firefox browser:
-
-src/main/java/com/utilities/webDriver/SelectDriver class
-Update line 22 to “firefox”

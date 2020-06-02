@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 //LoadableComponent<HomePage>
-public class HomePage extends BasePage<HomePage> {
+public class HomePage extends BasePage {
 
     @FindBy(xpath = "//h2[contains(text(),'Personal Information')]")
     WebElement personalInfoHeader;
