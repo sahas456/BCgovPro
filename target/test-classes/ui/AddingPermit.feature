@@ -3,6 +3,7 @@ Feature: Create Permit feature
   Background: Launch the browser and navigate to login page
     Given I navigate to the Bussiness account login page
 
+  @permit
   Scenario: UI - Create a permit with valid details - positive scenario
     Given I login to the application as a valid user
     And   I validate user is on the home page

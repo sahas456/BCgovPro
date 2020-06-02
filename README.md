@@ -1,21 +1,16 @@
-
-# test123
-
 Clone the project:
-Branch Name: test
+Branch Name: master
 
 Required for setup:
 
 java version "1.8.0_191"
 Apache Maven 3.6.3
 
-
 Added dependencies in the Maven POM.XML File.
 
 <junit.version>4.12</junit.version>
 <cucumber.version>4.1.0</cucumber.version>
 <selenium.version>3.14.0</selenium.version>
-
 
 Drivers (Exist in the project)
 Chrome Driver for Mac
@@ -33,6 +28,10 @@ How to Run Scripts:
 Navigate to 
 Src/test/java/com/runner/RunUITests class
 Right click on it and click RunUITests option
+
+or
+
+Navigate to AddingPermit.feature file right click on scenario and run the test.
 
 Reports would be generated under :
 /target/cucumber-html-report

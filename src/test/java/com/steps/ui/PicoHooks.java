@@ -1,7 +1,6 @@
 package com.steps.ui;
 
 import com.utilities.webDriver.DriverFactory;
-import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.slf4j.Logger;
@@ -12,7 +11,7 @@ public class PicoHooks extends DriverFactory {
     Logger logger = LoggerFactory.getLogger(PicoHooks.class);
 
     @Before
-    public void before(Scenario scenario) throws Exception {
+    public void before() throws Exception {
         initializeDriver();
         logger.info("Scenario Started");
     }

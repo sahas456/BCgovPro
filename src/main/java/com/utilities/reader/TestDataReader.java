@@ -8,14 +8,10 @@ import org.jetbrains.annotations.Contract;
  */
 public class TestDataReader {
 
-    private static final String delimiter;
     private static final String globaldata;
 
     static {
-        delimiter = "/";
-//        envfolder = com.trustarc.themis.utilities.reader.SystemDataReader
-//            .getEnvName() == null ? "dev" : com.trustarc.themis.utilities.reader.SystemDataReader.getEnvName();
-        globaldata = "data";
+       globaldata = "data";
 
     }
 
@@ -28,13 +24,6 @@ public class TestDataReader {
         return this.getClass().getClassLoader().getResource("data/").getPath();
     }
 
-//    private String getEnvLevelTestData(String key, String functionality) {
-//        reader.setPropertyFile(getGlobalDataFolderPath() + envdatafolderpath +
-//            functionality + fileExtension);
-//        String value = reader.getProp(key);
-//
-//        return (HelperUtils.isUsable(value)) ? value : getFunctionalityLevelTestData(key, functionality);
-//    }
 
     private String getTestData(String key) {
         reader.setPropertyFile(getGlobalDataFolderPath() + globaldata + fileExtension);
@@ -50,9 +39,6 @@ public class TestDataReader {
         return value;
     }
 
-    /**
-     * Method to read other data
-     */
     public String readData(String key) {
         return getTestData(key).trim();
     }

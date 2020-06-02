@@ -9,7 +9,6 @@ import org.junit.Assert;
 
 public class LoginPageSteps extends DriverFactory {
 
-
     private LoginPage loginPage;
     private TestDataReader testDataReader;
     public LoginPageSteps()
@@ -30,16 +29,8 @@ public class LoginPageSteps extends DriverFactory {
         Assert.assertTrue("User is not on Login page",loginPage.verifyUserOnLoginPage());
     }
 
-    @When("^I enter (valid|invalid) credentials and click login button$")
-    public void iEnterValidCredentials(String type) {
-        loginPage.login(type.toString());
-    }
-
-
     @When("^I login to the application as a valid user$")
     public void iLoginToTheApplicationAsAStandardUser() {
-
         loginPage.login();
-
     }
 }

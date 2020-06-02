@@ -4,10 +4,10 @@ import com.pages.basePage.BasePage;
 import com.utilities.WaitUtils;
 import com.utilities.reader.TestDataReader;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 public class ApplyPermitPage extends BasePage {
 
@@ -84,28 +84,28 @@ public class ApplyPermitPage extends BasePage {
     @FindBy(xpath = "//label[contains(text(),'Use Class')]")
     WebElement infoLabel;
 
+    @FindBy(how = How.XPATH, using = "//li[1]//span[1]//div[1]//span[1]")
+    public static WebElement address_selection;
+
     public void infoStage(){
         waitUtils.getElementAfterMediumWait(infoLabel).isDisplayed();
         nextButton.click();
     }
 
-    public void parcelStage(){
+    public void parcelStage() throws InterruptedException {
         waitUtils.getElementAfterMediumWait(inputlocation).isDisplayed();
         String inputLoc = testDataReader.readData("inputlocation");
-        inputlocation.sendKeys(inputLoc + Keys.SPACE + Keys.ARROW_DOWN + Keys.ENTER);
-
-//        String addressText = driver.findElement(By.xpath("//td[@role='gridcell']")).getAttribute("innerText");
-//
-//        if(addressText.contains(inputLoc)){
-//            selectButton.click();
-//            nextButton.click();
-//        }
-//        else{
-//
-//        }
+        inputlocation.sendKeys(inputLoc);
+        Thread.sleep(5000);
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollBy(0,600)");
+        address_selection.click();
+        Thread.sleep(2000);
+        selectButton.click();
+        nextButton.click();
 
     }
-    @FindBy(xpath = "//input[@placeholder = 'Search Location']")
+    @FindBy(xpath = "//input[@name = 'location']")
     WebElement inputlocation;
 
     @FindBy(xpath = "//button[contains(text(),'Select')]")

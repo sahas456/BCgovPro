@@ -47,8 +47,6 @@ public class HomePage extends BasePage {
        int newCnt = getPermitsCount();
        int oldcnt = helperUtils.getPermitsCnt();
        return newCnt == (oldcnt+1);
-
-
    }
 
    public boolean correctAddressIsDisplayed(){

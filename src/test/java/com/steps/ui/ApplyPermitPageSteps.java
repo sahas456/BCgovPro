@@ -27,10 +27,10 @@ public class ApplyPermitPageSteps extends DriverFactory {
     }
 
     @And("^I provide all the required details for all the permit stages$")
-    public void iProvideAllTheRequiredDetailsForAllThePermitStages() {
+    public void iProvideAllTheRequiredDetailsForAllThePermitStages() throws Exception {
         applyPermitPage.applicantInfoStage();
         applyPermitPage.infoStage();
-//        applyPermitPage.parcelStage();
+        applyPermitPage.parcelStage();
         applyPermitPage.workDescStage();
     }
 }

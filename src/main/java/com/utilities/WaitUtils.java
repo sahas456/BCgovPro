@@ -1,12 +1,6 @@
 package com.utilities;
 
-import java.io.File;
-
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -51,38 +45,6 @@ public class WaitUtils {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public WebElement waitForElementToEnabled(WebElement ele)
-    {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, MEDIUM_TIMEOUT);
-            return wait.until(ExpectedConditions.elementToBeClickable(ele));
-        }catch(TimeoutException e)
-        {
-            e.printStackTrace();
-            return  null;
-        }
-
-    }
-
-    public void waitForElementToDisappear(WebElement ele)
-    {
-
-            WebDriverWait wait = new WebDriverWait(driver, MEDIUM_TIMEOUT);
-            wait.until(ExpectedConditions.invisibilityOf(ele));
-    }
-
-    public void captureScreenshots(String res){
-        try {
-            File resourcesDirectory = new File("src/test/resources");
-            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshotFile, new File(resourcesDirectory.getAbsolutePath()+"/screenshots/"+res+System.currentTimeMillis()+"_test.png"));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
     }
 
 }
